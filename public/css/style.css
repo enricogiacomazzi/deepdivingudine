@@ -1,166 +1,283 @@
+/*
+ * Site shell: header, navigation, page banner and footer.
+ * Content inside #main is still styled by main.css.
+ */
 
 :root {
-    --header-background-color: #002147;
-    --header-background-color-hover: #2a7fff;
-    --header-text-color: #ffffff;
-    --header-height: 64px;
+	--header-background-color: #002147;
+	--header-background-color-hover: #2a7fff;
+	--header-text-color: #ffffff;
+	--header-height: 64px;
+	--banner-height: 325px;
 }
 
+/* The fixed header is taken out of the flow, so make room for it. */
+body {
+	padding-top: var(--header-height);
+}
 
+/* ---------------------------------------------------------------- header -- */
 
 header {
-    background-color: var(--header-background-color);
-    color: var(--header-text-color);
-    height: var(--header-height);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
+	background-color: var(--header-background-color);
+	color: var(--header-text-color);
+	height: var(--header-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	width: 100%;
 }
 
-header a {
-    color: var(--header-text-color);
-    font: 16px / 1 'Lato', arial, sans-serif;
-    padding: 25px 15px;
-    text-transform: uppercase;
+header .logo {
+	display: flex;
+	align-items: center;
+	padding: 0;
 }
 
-header a:hover {
-    background-color: var(--header-background-color-hover);
+header .logo img {
+	display: block;
+	height: 24px;
+	width: auto;
 }
 
-header a.active {
-    background-color: var(--header-text-color);
-    color: var(--header-background-color);
+#nav {
+	display: flex;
+	align-items: stretch;
+	height: 100%;
 }
 
-#home-banner {
-    background-size: cover;
-    background-image: url(../../uploads/2/4/1/4/24142153/background-images/884116991.webp);
-    background-repeat: no-repeat;
-    background-position: 100.00% 72.76%;
-    height: 575px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    font-family: 'Lato';
+#nav .nav-item {
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	color: var(--header-text-color);
+	font: 16px / 1 'Lato', arial, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
-#home-banner > h1 {
-    font-size: 1.65em;
-    font-size: 32px;
-    line-height: 45px;
-    font-weight: 300;
-    font-style: normal;
-    letter-spacing: 2px;
-    margin: 0;
+#nav .nav-item:hover,
+#nav .nav-item:focus-visible {
+	background-color: var(--header-background-color-hover);
 }
 
+#nav .nav-item.is-active {
+	background-color: var(--header-text-color);
+	color: var(--header-background-color);
+}
 
+/* -------------------------------------------------- mobile menu (no JS) -- */
 
+/*
+ * #mobile-input is a checkbox that sits just before <header>; the label styled
+ * as .hamburger toggles it and the sibling selectors below open the menu. It
+ * stays focusable (and so keyboard-operable) but is never visible.
+ */
+.mobile-toggle {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	opacity: 0;
+	pointer-events: none;
+}
 
+.hamburger {
+	display: none;
+	position: relative;
+	cursor: pointer;
+	padding: 8px;
+}
+
+.hamburger span,
+.hamburger::before,
+.hamburger::after {
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 4px;
+	background: var(--header-text-color);
+	transition: all 300ms cubic-bezier(0, 0.085, 0.68, 0.53);
+}
+
+.hamburger::before,
+.hamburger::after {
+	content: '';
+}
+
+.hamburger span {
+	margin: 4px 0;
+}
+
+/* Collapse the three bars into a cross while the menu is open. */
+#mobile-input:checked ~ header .hamburger::before {
+	top: 8px;
+	transform: rotate(45deg);
+}
+
+#mobile-input:checked ~ header .hamburger::after {
+	top: -8px;
+	transform: rotate(-45deg);
+}
+
+#mobile-input:checked ~ header .hamburger span {
+	opacity: 0;
+}
+
+/* ---------------------------------------------------------------- banner -- */
+
+/*
+ * One rule for every page. PageBanner.astro supplies --banner-image and
+ * --banner-position; .banner-tall / -medium / -short pick the height.
+ */
+.page-banner {
+	height: var(--banner-height);
+	background-image: var(--banner-image);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: var(--banner-position, 50% 50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: var(--header-text-color);
+	font-family: 'Lato', arial, sans-serif;
+}
+
+.banner-tall {
+	--banner-height: 575px;
+}
+
+.banner-medium {
+	--banner-height: 325px;
+}
+
+.banner-short {
+	--banner-height: 225px;
+}
+
+.page-banner h1 {
+	margin: 0;
+	font-size: 32px;
+	line-height: 45px;
+	font-weight: 300;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: inherit;
+}
+
+/* ---------------------------------------------------------------- footer -- */
 
 footer {
-    background-color: var(--header-background-color);
-    color: var(--header-text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem 0rem 1rem;
+	background-color: var(--header-background-color);
+	color: var(--header-text-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem 1rem 0 1rem;
 }
+
 footer p {
-    color: var(--header-text-color);
-    margin: 0;
+	color: var(--header-text-color);
+	margin: 0;
 }
 
 footer > div.social {
-    width: 100%;
-    max-width: calc(1100px - 2rem);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 20px;
+	width: 100%;
+	max-width: calc(1100px - 2rem);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-bottom: 20px;
+}
+
+footer > div.social img {
+	width: auto;
+	max-width: 100%;
 }
 
 footer > div.footer-text {
-    text-align: center;
-    font-size: 80%;
+	text-align: center;
+	font-size: 80%;
 }
 
-footer > div.footer-text > h1 {
-    font-weight: bolder;
-    line-height: 2;
-    margin: 0;
+footer > div.footer-text > p {
+	font-weight: bolder;
+	line-height: 2;
 }
 
-footer > div.footer-text > h1.mb {
-    margin-bottom: 29px;
+footer > div.footer-text > p.mb {
+	margin-bottom: 29px;
 }
 
-footer > div.privacy  {
-    margin: 2.5rem 0;
+footer > div.privacy {
+	margin: 2.5rem 0;
 }
 
 footer > div.privacy > a {
-    font-size: 12px;
-    color: var(--header-text-color);
-    text-decoration: underline;
+	font-size: 12px;
+	color: var(--header-text-color);
+	text-decoration: underline;
 }
+
+/* ------------------------------------------------------------ mobile -- */
 
 @media (max-width: 767px) {
+	.hamburger {
+		display: block;
+	}
 
-    #nav {
-        background-color: var(--header-background-color);
-        width: 100vw;
-        height: calc(100vh - var(--header-height));
-        padding-top: calc(40px + --header-height);
-        /* position: fixed; */
-        top: var(--header-height);
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        display: none;
-        border: 0;
-    }
+	#nav {
+		display: none;
+		position: fixed;
+		top: var(--header-height);
+		left: 0;
+		width: 100vw;
+		height: calc(100vh - var(--header-height));
+		padding-top: 40px;
+		box-sizing: border-box;
+		background-color: var(--header-background-color);
+		flex-direction: column;
+		align-items: center;
+		overflow-y: auto;
+	}
 
-    #nav:popover-open {
-        display: flex;
-    }
+	#mobile-input:checked ~ header #nav {
+		display: flex;
+	}
 
-    #nav > a {
-        /* display: inline; */
-        padding: 10px 15px;
-    }
+	#nav .nav-item {
+		padding: 10px 15px;
+	}
 
-    header > a > img  {
-        height: 20px;
-    }
+	header .logo img {
+		height: 20px;
+	}
 
-    #home-banner {
-        height: 300px;
-        padding-left: 1.5rem;
-        margin-top: var(--header-height);
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        font-size: 35px;
-    }
+	.banner-tall {
+		--banner-height: 300px;
+	}
 
+	.banner-medium {
+		--banner-height: 250px;
+	}
 
-    #home-banner > h1 {
-        width: 10rem;
-        text-align: start;
-    }
+	.banner-short {
+		--banner-height: 150px;
+	}
 
+	.page-banner {
+		padding: 0 1.5rem;
+	}
 
-}
-
-@media (min-width: 768px) {
-  #nav {
-    display: flex !important;
-  }
+	.page-banner h1 {
+		font-size: 28px;
+		line-height: 38px;
+	}
 }

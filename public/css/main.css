@@ -334,47 +334,47 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 
 /* ---- 8. per-page background \3c style> blocks ---- */
 /* apnea.html */
-body.wsite-page-apnea .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/495794096.jpg") !important;background-repeat: no-repeat !important;background-position: 50.00% 39.45% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-apnea .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/495794096.jpg") !important;background-repeat: no-repeat !important;background-position: 50.00% 39.45% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-apnea.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-apnea .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* chi-siamo.html */
-body.wsite-page-chi-siamo .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/1773517309.webp") !important;background-repeat: no-repeat !important;background-position: 50% 50% !important;background-size: 100% !important;background-color: transparent !important;background: inherit;}
+body.wsite-page-chi-siamo .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/1773517309.webp") !important;background-repeat: no-repeat !important;background-position: 50% 50% !important;background-size: 100% !important;background-color: transparent !important;background: inherit;}
 body.wsite-page-chi-siamo.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-chi-siamo .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* contatti.html */
-body.wsite-page-contatti .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/1634804312.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 70.58% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-contatti .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/1634804312.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 70.58% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-contatti.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-contatti .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* corsi.html */
-body.wsite-page-corsi .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/1592601701.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 45.86% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-corsi .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/1592601701.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 45.86% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-corsi.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-corsi .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* ecology.html */
-body.wsite-page-ecology .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/1201870644.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 19.13% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-ecology .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/1201870644.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 19.13% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-ecology.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-ecology .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* index.html */
-body.wsite-page-index .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/884116991.webp") !important;background-repeat: no-repeat !important;background-position: 100.00% 72.76% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-index .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/884116991.webp") !important;background-repeat: no-repeat !important;background-position: 100.00% 72.76% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-index.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-index .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* media.html */
-body.wsite-page-media .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/6481160.webp") !important;background-repeat: no-repeat !important;background-position: 50% 50% !important;background-size: 100% !important;background-color: transparent !important;background: inherit;}
+body.wsite-page-media .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/6481160.webp") !important;background-repeat: no-repeat !important;background-position: 50% 50% !important;background-size: 100% !important;background-color: transparent !important;background: inherit;}
 body.wsite-page-media.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-media .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* specialty.html */
-body.wsite-page-specialty .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/474907913.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 14.60% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-specialty .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/474907913.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 14.60% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-specialty.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-specialty .wsite-background.wsite-custom-background {background-size: cover !important}
 
 /* staff.html */
-body.wsite-page-staff .wsite-background {background-image: url("../../uploads/2/4/1/4/24142153/background-images/1452336786.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 50.26% !important;background-size: 100% !important;background-color: transparent !important;}
+body.wsite-page-staff .wsite-background {background-image: url("/uploads/2/4/1/4/24142153/background-images/1452336786.webp") !important;background-repeat: no-repeat !important;background-position: 50.00% 50.26% !important;background-size: 100% !important;background-color: transparent !important;}
 body.wsite-page-staff.wsite-background {background-attachment: fixed !important;}
 body.wsite-page-staff .wsite-background.wsite-custom-background {background-size: cover !important}
 

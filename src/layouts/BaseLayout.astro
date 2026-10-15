@@ -1,0 +1,126 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import PageBanner from '../components/PageBanner.astro';
+import { getPage, pageUrl } from '../data/pages';
+import { SITE_NAME, SITE_URL, STRUCTURED_DATA } from '../data/site';
+
+interface Props {
+	/** Which entry of src/data/pages.ts this page is. */
+	slug: string;
+}
+
+const { slug } = Astro.props;
+const page = getPage(slug);
+const canonical = new URL(pageUrl(slug), SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="content-language" content="it" />
+
+		<title>{page.title}</title>
+		<meta name="description" content={page.description} />
+		<meta name="keywords" content={page.keywords} />
+		<link rel="canonical" href={canonical} />
+
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:title" content={page.ogTitle} />
+		<meta property="og:description" content={page.description} />
+		<meta property="og:url" content={canonical} />
+		{
+			page.ogImages.map((image) => (
+				<meta property="og:image" content={new URL(image, SITE_URL).href} />
+			))
+		}
+
+		<link rel="apple-touch-icon" sizes="57x57" href="/files/theme/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="/files/theme/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/files/theme/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/files/theme/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/files/theme/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/files/theme/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/files/theme/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/files/theme/apple-touch-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/files/theme/apple-touch-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/files/theme/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/files/theme/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="/files/theme/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/files/theme/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="194x194" href="/files/theme/favicon-194x194.png" />
+		<link rel="shortcut icon" href="/files/theme/favicon.ico" />
+
+		<meta name="theme-color" content="#000055" />
+		<meta name="msapplication-TileColor" content="#000055" />
+		<meta
+			name="google-site-verification"
+			content="_5QzC6BNfWaBID3zm_JCeaL-za2Y58CLKclIi4XwuJs"
+		/>
+		<meta name="msvalidate.01" content="30723EC2901FE43EDE736D2572189630" />
+
+		{
+			STRUCTURED_DATA.map((data) => (
+				<script type="application/ld+json" set:html={JSON.stringify(data)} />
+			))
+		}
+
+		{/*
+			Consent manager. `blockingmode="auto"` holds back the tags below until
+			the visitor has agreed, so it has to stay first in the head.
+		*/}
+		<script
+			id="Cookiebot"
+			src="https://consent.cookiebot.com/uc.js"
+			data-cbid="2edc0cf8-8393-462b-916f-68150e2b3fcd"
+			data-blockingmode="auto"
+			type="text/javascript"
+			is:inline
+		></script>
+
+		{/* Google Analytics (GA4). */}
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-YRHJWQXPEJ"
+			is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-YRHJWQXPEJ');
+		</script>
+
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+
+		{/* The banner image is the LCP on every page, so start it with the stylesheet. */}
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			href={page.bannerImage}
+			type={page.bannerImage.endsWith('.webp') ? 'image/webp' : undefined}
+		/>
+	</head>
+	<body class="wsite-theme-light">
+		<SiteHeader current={slug} />
+
+		<PageBanner page={page}>
+			<slot name="banner" />
+		</PageBanner>
+
+		<div id="main">
+			<div class="container">
+				<div id="wsite-content" class="wsite-elements wsite-not-footer">
+					<slot />
+				</div>
+			</div>
+		</div>
+
+		<SiteFooter />
+	</body>
+</html>

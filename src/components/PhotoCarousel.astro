@@ -1,0 +1,195 @@
+---
+/*
+ * Replaces the Weebly `wSlideshow` widget (jQuery + the 480 KB theme bundle).
+ * The track is a native scroll-snap carousel: it swipes, scrolls and keyboard
+ * -navigates with no JavaScript at all. The inline script only adds the
+ * previous/next buttons and the 5s autoplay the old widget had.
+ */
+const photos = [
+	{ url: '/uploads/2/4/1/4/24142153/8615128.jpg', width: 400, height: 277, alt: 'Barracuda a Sipadan' },
+	{ url: '/uploads/2/4/1/4/24142153/9503612.jpg', width: 400, height: 266, alt: 'Tartaruga' },
+	{ url: '/uploads/2/4/1/4/24142153/3230728.jpg', width: 400, height: 300, alt: 'Clownfish' },
+	{ url: '/uploads/2/4/1/4/24142153/3089333.jpg', width: 400, height: 300, alt: 'Gamberetto e anemone' },
+	{ url: '/uploads/2/4/1/4/24142153/2348789.jpg', width: 400, height: 266, alt: 'Gamberetto e corallo uva' },
+	{ url: '/uploads/2/4/1/4/24142153/anemone.jpeg', width: 800, height: 600, alt: 'Anemone' },
+	{ url: '/uploads/2/4/1/4/24142153/jack.jpeg', width: 800, height: 600, alt: 'Carangidi giganti' },
+	{ url: '/uploads/2/4/1/4/24142153/mandarin.jpeg', width: 800, height: 600, alt: 'Mandarinfish' },
+	{ url: '/uploads/2/4/1/4/24142153/boxfish.jpeg', width: 800, height: 600, alt: 'Pesce scatola cornuto' },
+	{ url: '/uploads/2/4/1/4/24142153/cernia.jpeg', width: 800, height: 600, alt: 'Cernia' },
+	{ url: '/uploads/2/4/1/4/24142153/clam.jpeg', width: 800, height: 600, alt: 'Mollusco bivalve col ciuffo' },
+	{ url: '/uploads/2/4/1/4/24142153/clown.jpeg', width: 800, height: 600, alt: 'Clownfish' },
+	{ url: '/uploads/2/4/1/4/24142153/flatworm.jpeg', width: 800, height: 600, alt: 'Verme piatto' },
+	{ url: '/uploads/2/4/1/4/24142153/frog1.jpeg', width: 800, height: 600, alt: 'Frogfish' },
+	{ url: '/uploads/2/4/1/4/24142153/frog2.jpeg', width: 800, height: 600, alt: 'Frogfish' },
+	{ url: '/uploads/2/4/1/4/24142153/gamberetto1.jpeg', width: 800, height: 600, alt: 'Gamberetto del corallo frusta' },
+	{ url: '/uploads/2/4/1/4/24142153/nudi.jpeg', width: 800, height: 600, alt: 'Nudibranco' },
+	{ url: '/uploads/2/4/1/4/24142153/gamberetto2.jpeg', width: 800, height: 600, alt: 'Gamberetto' },
+	{ url: '/uploads/2/4/1/4/24142153/gamberetto3.jpeg', width: 800, height: 600, alt: 'Gamberetto' },
+	{ url: '/uploads/2/4/1/4/24142153/granchio.jpeg', width: 800, height: 600, alt: 'Granchio porcellana e anemone' },
+	{ url: '/uploads/2/4/1/4/24142153/hammer.jpeg', width: 800, height: 600, alt: 'Squalo martello' },
+	{ url: '/uploads/2/4/1/4/24142153/istrice.jpeg', width: 800, height: 600, alt: 'Pesce istrice e gamberetti' },
+	{ url: '/uploads/2/4/1/4/24142153/nudi2.jpeg', width: 800, height: 600, alt: 'Nudibranco' },
+	{ url: '/uploads/2/4/1/4/24142153/octopus.jpeg', width: 800, height: 600, alt: 'Occhio di un polpo' },
+	{ url: '/uploads/2/4/1/4/24142153/pigmy.jpeg', width: 1024, height: 768, alt: 'Cavalluccio marino pigmeo' },
+	{ url: '/uploads/2/4/1/4/24142153/scorfanetto.jpeg', width: 800, height: 600, alt: 'Scorfanetto' },
+	{ url: '/uploads/2/4/1/4/24142153/scorfano.jpeg', width: 800, height: 600, alt: 'Scorfano' },
+	{ url: '/uploads/2/4/1/4/24142153/seppia.jpeg', width: 800, height: 600, alt: 'Cuttlefish flamboyant' },
+	{ url: '/uploads/2/4/1/4/24142153/tridacna.jpeg', width: 800, height: 600, alt: 'Tridacna' },];
+---
+
+<div class="photo-carousel" aria-roledescription="carousel" aria-label="Foto subacquee">
+	<ul class="carousel-track" tabindex="0">
+		{
+			photos.map((photo, i) => (
+				<li class="carousel-slide">
+					<img
+						src={photo.url}
+						width={photo.width}
+						height={photo.height}
+						alt={photo.alt}
+						loading={i === 0 ? 'eager' : 'lazy'}
+						decoding="async"
+					/>
+					<p class="carousel-caption">{photo.alt}</p>
+				</li>
+			))
+		}
+	</ul>
+	<button class="carousel-prev" type="button" aria-label="Foto precedente" hidden>&#8249;</button>
+	<button class="carousel-next" type="button" aria-label="Foto successiva" hidden>&#8250;</button>
+</div>
+
+<style>
+	.photo-carousel {
+		position: relative;
+		margin: 0 auto;
+		max-width: 800px;
+	}
+
+	.carousel-track {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		scrollbar-width: none;
+	}
+
+	.carousel-track::-webkit-scrollbar {
+		display: none;
+	}
+
+	.carousel-slide {
+		flex: 0 0 100%;
+		scroll-snap-align: center;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.carousel-slide img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		display: block;
+	}
+
+	.carousel-caption {
+		margin: 0;
+		padding: 0.5em 0;
+		text-align: center;
+		font-size: 90%;
+	}
+
+	.carousel-prev,
+	.carousel-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 2.5rem;
+		height: 2.5rem;
+		border: 0;
+		border-radius: 50%;
+		background: rgba(0, 33, 71, 0.65);
+		color: #fff;
+		font-size: 1.5rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.carousel-prev:hover,
+	.carousel-next:hover {
+		background: #2a7fff;
+	}
+
+	.carousel-prev {
+		left: 0.5rem;
+	}
+
+	.carousel-next {
+		right: 0.5rem;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.carousel-track {
+			scroll-behavior: auto;
+		}
+	}
+</style>
+
+<script>
+	// Progressive enhancement: the carousel already scrolls and snaps without
+	// this, so the buttons stay hidden until the script runs.
+	const AUTOPLAY_MS = 5000;
+
+	document.querySelectorAll<HTMLElement>('.photo-carousel').forEach((carousel) => {
+		const track = carousel.querySelector<HTMLElement>('.carousel-track');
+		const prev = carousel.querySelector<HTMLButtonElement>('.carousel-prev');
+		const next = carousel.querySelector<HTMLButtonElement>('.carousel-next');
+		if (!track || !prev || !next) return;
+
+		prev.hidden = false;
+		next.hidden = false;
+
+		const step = (direction: number) => {
+			const slide = track.clientWidth;
+			// Wrap around rather than stopping at either end.
+			const max = track.scrollWidth - slide;
+			let target = track.scrollLeft + direction * slide;
+			if (target > max + 1) target = 0;
+			else if (target < -1) target = max;
+			track.scrollTo({ left: target });
+		};
+
+		prev.addEventListener('click', () => step(-1));
+		next.addEventListener('click', () => step(1));
+
+		const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let timer: number | undefined;
+
+		const stop = () => {
+			if (timer !== undefined) window.clearInterval(timer);
+			timer = undefined;
+		};
+
+		const start = () => {
+			stop();
+			if (reduced.matches) return;
+			timer = window.setInterval(() => step(1), AUTOPLAY_MS);
+		};
+
+		// Don't advance under someone's finger, cursor or keyboard focus.
+		for (const event of ['pointerenter', 'focusin', 'touchstart'] as const) {
+			carousel.addEventListener(event, stop);
+		}
+		for (const event of ['pointerleave', 'focusout'] as const) {
+			carousel.addEventListener(event, start);
+		}
+		reduced.addEventListener('change', start);
+
+		start();
+	});
+</script>

@@ -1,0 +1,33 @@
+---
+import { pageUrl } from '../data/pages';
+import { SOCIAL } from '../data/site';
+---
+
+<footer>
+	<div class="social">
+		{
+			SOCIAL.map((link) => (
+				<a href={link.url} target="_blank" rel="noopener">
+					<img src={link.icon} loading="lazy" alt={link.name} />
+				</a>
+			))
+		}
+	</div>
+	<div class="footer-text">
+		<p>DEEP DIVING UDINE A.s.d.</p>
+		<p>Corsi sub a Udine, Friuli</p>
+		<p>Scuola di immersione autorizzata SSI</p>
+		<p>Brevetti Internazionali</p>
+		<p class="mb">
+			Fai un corso subacqueo, ti divertirai e scoprirai un mondo meraviglioso!
+		</p>
+
+		<p>&copy; 2025 DEEP DIVING UDINE A.s.d. - C.F. 94136160309</p>
+		<p>Via Stiria 47 - 33100 Udine - Friuli Venezia Giulia - Italia</p>
+	</div>
+	<div class="privacy">
+		<a href="https://www.deepdivingudine.it/privacy.html">Privacy</a>
+		<span>&nbsp;-&nbsp;</span>
+		<a href={pageUrl('contatti')}>Contatti</a>
+	</div>
+</footer>

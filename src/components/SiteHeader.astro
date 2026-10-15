@@ -1,0 +1,44 @@
+---
+import { pages, pageUrl } from '../data/pages';
+import { SITE_NAME } from '../data/site';
+
+interface Props {
+	/** Slug of the page being rendered, so its nav entry can be marked active. */
+	current: string;
+}
+
+const { current } = Astro.props;
+---
+
+{/*
+	The checkbox drives the mobile menu entirely in CSS — see #mobile-input in
+	public/css/style.css. It carries no JavaScript, so the nav works before (and
+	without) hydration.
+*/}
+<input type="checkbox" id="mobile-input" class="mobile-toggle" aria-hidden="true" tabindex="-1" />
+<header>
+	<a class="logo" href={pageUrl('index')}>
+		<img
+			src="/uploads/2/4/1/4/24142153/logo-intestazione.png"
+			alt={SITE_NAME}
+			width="242"
+			height="24"
+		/>
+	</a>
+	<label class="hamburger" for="mobile-input" aria-label="Apri il menu">
+		<span></span>
+	</label>
+	<nav id="nav">
+		{
+			pages.map((page) => (
+				<a
+					href={pageUrl(page.slug)}
+					class:list={['nav-item', { 'is-active': page.slug === current }]}
+					aria-current={page.slug === current ? 'page' : undefined}
+				>
+					{page.label}
+				</a>
+			))
+		}
+	</nav>
+</header>
