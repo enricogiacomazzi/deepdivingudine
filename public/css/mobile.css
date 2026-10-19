@@ -59,5 +59,6 @@ header .logo img {
 
 .page-banner > h1.home {
 	flex-direction: column;
-	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
 }
