@@ -1,0 +1,63 @@
+/*
+ * Mobile overrides for style.css, loaded only below the 767px breakpoint via
+ * the <link media="(max-width: 767px)"> in BaseLayout.astro — these rules
+ * are NOT wrapped in @media here, the link's media attribute already scopes
+ * the whole file.
+ */
+
+.hamburger {
+	display: block;
+}
+
+#nav {
+	display: none;
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	width: 100vw;
+	height: calc(100vh - var(--header-height));
+	padding-top: 40px;
+	box-sizing: border-box;
+	background-color: var(--header-background-color);
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+}
+
+#mobile-input:checked ~ header #nav {
+	display: flex;
+}
+
+#nav .nav-item {
+	padding: 10px 15px;
+}
+
+header .logo img {
+	height: 20px;
+}
+
+.banner-tall {
+	--banner-height: 300px;
+}
+
+.banner-medium {
+	--banner-height: 250px;
+}
+
+.banner-short {
+	--banner-height: 150px;
+}
+
+.page-banner {
+	padding: 0 1.5rem;
+}
+
+.page-banner h1 {
+	font-size: 35px;
+	line-height: 38px;
+}
+
+.page-banner > h1.home {
+	flex-direction: column;
+	justify-content: flex-start;
+}

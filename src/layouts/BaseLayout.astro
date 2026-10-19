@@ -97,6 +97,12 @@ const canonical = new URL(pageUrl(slug), SITE_URL).href;
 
 		<link rel="stylesheet" href={withBase('/css/main.css')} />
 		<link rel="stylesheet" href={withBase('/css/style.css')} />
+		{/*
+			Below the 767px breakpoint only — matches the @media rule this file
+			used to contain. The browser still fetches it on wider viewports, but
+			won't apply or render-block on it, so it's free there.
+		*/}
+		<link rel="stylesheet" href={withBase('/css/mobile.css')} media="(max-width: 767px)" />
 
 		{/* The banner image is the LCP on every page, so start it with the stylesheet. */}
 		<link

@@ -172,6 +172,14 @@ header .logo img {
 	color: inherit;
 }
 
+.page-banner > h1.home {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.page-banner > h1.home > span::first-letter {
+	text-decoration: underline;
+}
 /* ---------------------------------------------------------------- footer -- */
 
 footer {
@@ -224,60 +232,4 @@ footer > div.privacy > a {
 	font-size: 12px;
 	color: var(--header-text-color);
 	text-decoration: underline;
-}
-
-/* ------------------------------------------------------------ mobile -- */
-
-@media (max-width: 767px) {
-	.hamburger {
-		display: block;
-	}
-
-	#nav {
-		display: none;
-		position: fixed;
-		top: var(--header-height);
-		left: 0;
-		width: 100vw;
-		height: calc(100vh - var(--header-height));
-		padding-top: 40px;
-		box-sizing: border-box;
-		background-color: var(--header-background-color);
-		flex-direction: column;
-		align-items: center;
-		overflow-y: auto;
-	}
-
-	#mobile-input:checked ~ header #nav {
-		display: flex;
-	}
-
-	#nav .nav-item {
-		padding: 10px 15px;
-	}
-
-	header .logo img {
-		height: 20px;
-	}
-
-	.banner-tall {
-		--banner-height: 300px;
-	}
-
-	.banner-medium {
-		--banner-height: 250px;
-	}
-
-	.banner-short {
-		--banner-height: 150px;
-	}
-
-	.page-banner {
-		padding: 0 1.5rem;
-	}
-
-	.page-banner h1 {
-		font-size: 28px;
-		line-height: 38px;
-	}
 }
