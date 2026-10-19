@@ -300,10 +300,8 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label {font-family:"Lato" !important;}
 #wsite-content div.paragraph, #wsite-content p, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label {color:#2a2a2a !important;}
 .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-family:"Lato" !important;font-weight:400 !important;}
-.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, #wsite-content h2 {font-weight:700 !important;}
-#wsite-content h2 {color:#2a2a2a !important;}
 .wsite-elements.wsite-footer h2{font-weight:300 !important;}
-.wsite-not-footer h2.wsite-content-title a, .wsite-not-footer .paragraph a, .wsite-not-footer blockquote a {color:#24678d !important;}
+.wsite-not-footer .paragraph a, .wsite-not-footer blockquote a {color:#24678d !important;}
 .wsite-footer h2 a, .wsite-footer .paragraph a, .wsite-footer blockquote a {color:#fff !important;}
 .wsite-menu-default a {}
 .wsite-menu a {font-family:"Lato" !important;font-weight:400 !important;}
@@ -313,14 +311,12 @@ div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; 
 .wsite-button-inner {font-family:"Lato" !important;font-weight:400 !important;}
 .wsite-not-footer blockquote {font-family:"Yanone Kaffeesatz" !important;font-weight:300 !important;color:#3f3f3f !important;font-style:italic !important;letter-spacing: 0px !important;}
 .wsite-footer blockquote {}
-.wsite-not-footer h2.wsite-content-title a:hover, .wsite-not-footer .paragraph a:hover, .wsite-not-footer blockquote a:hover {color:#2a7fff !important;}
+.wsite-not-footer .paragraph a:hover, .wsite-not-footer blockquote a:hover {color:#2a7fff !important;}
 .wsite-footer h2 a:hover, .wsite-footer .paragraph a:hover, .wsite-footer blockquote a:hover {color:#fff !important;}
 .wsite-button-large .wsite-button-inner {font-size:16px !important;}
 @media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label {font-size:16px !important;}
 #wsite-content div.paragraph, #wsite-content p, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label {}
 .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-size:12px !important;}
-.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, #wsite-content h2 {font-size:20px !important;}
-#wsite-content h2 {}
 .wsite-elements.wsite-footer h2{}
 .wsite-menu-default a {font-size:14px !important;}
 .wsite-menu a {font-size:12px !important;}

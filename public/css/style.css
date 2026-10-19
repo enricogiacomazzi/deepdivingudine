@@ -1,6 +1,6 @@
 /*
- * Site shell: header, navigation, page banner and footer.
- * Content inside #main is still styled by main.css.
+ * Site shell: header, navigation, page banner and footer, plus the section
+ * h2 below. The rest of #main's content is still styled by main.css.
  */
 
 :root {
@@ -14,6 +14,22 @@
 /* The fixed header is taken out of the flow, so make room for it. */
 body {
 	padding-top: var(--header-height);
+}
+
+/* --------------------------------------------------------------- content -- */
+
+/*
+ * Every section title in #main is a plain <h2> — previously
+ * <h2 class="wsite-content-title u-center">, the combined effect of
+ * main.css's #wsite-content h2 rules and the u-center utility class.
+ */
+h2 {
+	font-family: 'Lato', arial, sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	margin: 0 auto 0.65em;
+	color: #2a2a2a;
+	text-align: center;
 }
 
 /* ---------------------------------------------------------------- header -- */
