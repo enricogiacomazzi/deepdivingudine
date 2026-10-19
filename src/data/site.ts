@@ -59,7 +59,7 @@ export const STRUCTURED_DATA = [
 		image: [
 			`${SITE_URL}/files/theme/CorsoSubUdine.webp`,
 			`${SITE_URL}/files/theme/BrevettosubUdine.webp`,
-			`${SITE_URL}/uploads/2/4/1/4/24142153/corsi-brevetti-sub-udine-friuli_orig.webp`,
+			`${SITE_URL}/uploads/corsi-brevetti-sub-udine-friuli_orig.webp`,
 		],
 		'@id': `${SITE_URL}/`,
 		url: `${SITE_URL}/`,
@@ -87,8 +87,8 @@ export const STRUCTURED_DATA = [
 		name: 'Deep Diving Udine A.S.D.',
 		alternateName: 'Corsi sub a Udine, Friuli',
 		url: `${SITE_URL}/`,
-		logo: `${SITE_URL}/uploads/2/4/1/4/24142153/deepdivingudine_orig.webp`,
-		image: `${SITE_URL}/uploads/2/4/1/4/24142153/corsi-brevetti-sub-udine-friuli_orig.webp`,
+		logo: `${SITE_URL}/uploads/deepdivingudine_orig.webp`,
+		image: `${SITE_URL}/uploads/corsi-brevetti-sub-udine-friuli_orig.webp`,
 		contactPoint: {
 			'@type': 'ContactPoint',
 			telephone: CONTACT.phone,
