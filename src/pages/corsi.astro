@@ -1,14 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout slug="corsi">
 	<h2 class="wsite-content-title u-center"><font size="6">&#8203;COME DIVENTARE BRAVI SUBACQUEI</font></h2>
 
-<div class="paragraph">Se hai pensato ad un corso subacqueo, questa &egrave; la pagina giusta, ci sono <strong>tutte le informazioni utili per iniziare la tua avventura sott'acqua&nbsp;</strong>e ottenere il brevetto <strong>Open Water Diver</strong>.<br />Se invece il brevetto ce l'hai gi&agrave; (<a href="/uploads/2/4/1/4/24142153/standard_ssi_equivalenza.pdf" target="_blank">anche di un'altra didattica</a>) e vuoi progredire, vai direttamente alla pagina dedicata alle specialit&agrave; ricreative e tecniche.<br />&#8203;&#8203;Nella pagina <a href="/ecology.html">ECOLOGY</a> trovi infine le specialit&agrave; dedicate all'ambiente marino.</div>
+<div class="paragraph">Se hai pensato ad un corso subacqueo, questa &egrave; la pagina giusta, ci sono <strong>tutte le informazioni utili per iniziare la tua avventura sott'acqua&nbsp;</strong>e ottenere il brevetto <strong>Open Water Diver</strong>.<br />Se invece il brevetto ce l'hai gi&agrave; (<a href={withBase('/uploads/2/4/1/4/24142153/standard_ssi_equivalenza.pdf')} target="_blank">anche di un'altra didattica</a>) e vuoi progredire, vai direttamente alla pagina dedicata alle specialit&agrave; ricreative e tecniche.<br />&#8203;&#8203;Nella pagina <a href={withBase('/ecology.html')}>ECOLOGY</a> trovi infine le specialit&agrave; dedicate all'ambiente marino.</div>
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/specialty.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/specialty.html')} >
 <span class="wsite-button-inner">Già brevettato? Clicca qui</span>
 </a>
 <div class="u-h-0 u-clip"></div></div>
@@ -30,13 +31,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <h2 class="wsite-content-title u-center">&#8203;REQUISITI</h2>
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
-<a href='/uploads/2/4/1/4/24142153/standard_ssi_acquaticità.pdf' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/requisiti-website_orig.webp" alt="Requisiti" />
+<a href={withBase('/uploads/2/4/1/4/24142153/standard_ssi_acquaticità.pdf')} target='_blank'>
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/requisiti-website_orig.webp')} alt="Requisiti" />
 </a>
 <div class="u-block u-fs-90">Acquaticità</div>
 </div></div>
 
-<div class="paragraph u-left">Poich&eacute; vogliamo offrire agli aspiranti subacquei una <strong>formazione di elevato livello</strong>, puntando molto sull&rsquo;apprendimento delle abilit&agrave; di base direttamente in mare, serve avere gi&agrave; una buona <strong>acquaticit&agrave;</strong>.<br />Gli <strong><a href="https://www.deepdivingudine.it/uploads/2/4/1/4/24142153/standard_ssi_acquaticit%C3%A0.pdf" target="_blank">standard SSI</a></strong> prevedono come requisiti per i principianti la capacit&agrave; di nuotare per 200 metri senza alcun ausilio (oppure 300 metri con maschera, pinne e snorkel) e di saper galleggiare per 10 minuti.<br />L'ideale &egrave; anche saper gi&agrave; nuotare sott&rsquo;acqua in apnea.<br />Queste abilit&agrave; di base vi permettono di concentrarvi su ci&ograve; che un subacqueo deve saper far bene fin dall&rsquo;inizio della propria carriera: stare agevolmente in assetto neutro a qualsiasi profondit&agrave;, controllare la delicata fase della risalita e<strong> usare le pinne senza danneggiare l&rsquo;ambiente</strong>.<br />Prima della pratica serve il <strong>certificato medico di idoneit&agrave; sportiva non agonistica</strong>.<br />Potete consultate l'apposito <a href="/uploads/2/4/1/4/24142153/tr-medical-diver_italian.pdf" target="_blank">questionario</a> per controllare particolari condizioni che potrebbero richiedere una visita pi&ugrave; approfondita o specialistica.</div>
+<div class="paragraph u-left">Poich&eacute; vogliamo offrire agli aspiranti subacquei una <strong>formazione di elevato livello</strong>, puntando molto sull&rsquo;apprendimento delle abilit&agrave; di base direttamente in mare, serve avere gi&agrave; una buona <strong>acquaticit&agrave;</strong>.<br />Gli <strong><a href="https://www.deepdivingudine.it/uploads/2/4/1/4/24142153/standard_ssi_acquaticit%C3%A0.pdf" target="_blank">standard SSI</a></strong> prevedono come requisiti per i principianti la capacit&agrave; di nuotare per 200 metri senza alcun ausilio (oppure 300 metri con maschera, pinne e snorkel) e di saper galleggiare per 10 minuti.<br />L'ideale &egrave; anche saper gi&agrave; nuotare sott&rsquo;acqua in apnea.<br />Queste abilit&agrave; di base vi permettono di concentrarvi su ci&ograve; che un subacqueo deve saper far bene fin dall&rsquo;inizio della propria carriera: stare agevolmente in assetto neutro a qualsiasi profondit&agrave;, controllare la delicata fase della risalita e<strong> usare le pinne senza danneggiare l&rsquo;ambiente</strong>.<br />Prima della pratica serve il <strong>certificato medico di idoneit&agrave; sportiva non agonistica</strong>.<br />Potete consultate l'apposito <a href={withBase('/uploads/2/4/1/4/24142153/tr-medical-diver_italian.pdf')} target="_blank">questionario</a> per controllare particolari condizioni che potrebbero richiedere una visita pi&ugrave; approfondita o specialistica.</div>
 
 
 					
@@ -48,7 +49,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
 <a href='https://training.divessi.com/index.php?id=4279&L=6&logintype=login&extauth[action]=previewaccess' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/teoria-website_orig.webp" alt="Teoria" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/teoria-website_orig.webp')} alt="Teoria" />
 </a>
 <div class="u-block u-fs-90">Anteprima free!</div>
 </div></div>
@@ -65,7 +66,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
 <a href='https://www.divessi.com/it/mydiveguide' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/pratica-website_orig.webp" alt="Pratica" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/pratica-website_orig.webp')} alt="Pratica" />
 </a>
 <div class="u-block u-fs-90">Mare, mare, mare...</div>
 </div></div>
@@ -91,7 +92,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-0 u-mx-0 u-center">
 <a href='https://www.divessi.com/register/ref/717787' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/ssi_orig.png" alt="Free online training" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/ssi_orig.png')} alt="Free online training" />
 </a>
 <div class="u-block u-fs-90">Registrati</div>
 </div></div>
@@ -104,7 +105,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-0 u-mx-0 u-center">
 <a href='https://apps.apple.com/us/app/myssi-3-0/id1249389209' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/apple-app-store_orig.png" alt="App SSI ios" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/apple-app-store_orig.png')} alt="App SSI ios" />
 </a>
 <div class="u-block u-fs-90">Scarica app</div>
 </div></div>
@@ -117,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-0 u-mx-0 u-center">
 <a href='https://play.google.com/store/apps/details?id=com.divessi.ssi' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/google-play-store_orig.png" alt="App SSI android" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/google-play-store_orig.png')} alt="App SSI android" />
 </a>
 <div class="u-block u-fs-90">Scarica app</div>
 </div></div>
@@ -135,7 +136,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <h2 class="wsite-content-title u-center">AVVERTENZE IMPORTANTI</h2>
 
-<div class="paragraph u-left">Per frequentare i corsi &egrave; necessario associarsi, facendo apposita domanda (la quota annuale &egrave; di &euro; 75,00 e si acquisiscono i diritti ed i doveri previsti dallo <a href="/uploads/2/4/1/4/24142153/nuovo_statuto_deep.pdf" target="_blank">Statuto</a>).<br />Per i costi dei corsi <a href="/contatti.html">scriveteci</a>.<br /><strong>Bombola, apparato per respirare (erogatore), giubbetto equilibratore (GAV), zavorra, computer da immersione e bussola sono forniti in uso gratuito da noi</strong>.<br />Le spese di trasferta sono a carico degli allievi.<br />Il certificato medico di idoneit&agrave; alla pratica sportiva non agonistica deve essere rilasciato solo dal proprio medico di base o da uno specialista in medicina sportiva, che normalmente trovate presso i centri appositi.<br />L'et&agrave; minima per accedere al corso Open Water Diver &egrave; di 15 anni; gli allievi di et&agrave; inferiore (a partire dai 10 anni) saranno certificati Junior Open Water Diver e dovranno immergersi sotto la supervisione diretta di un Professional, in ambienti simili a quelli dove hanno ricevuto l'addestramento. Gli Junior Open Water Diver di 10 e 11 anni hanno un limite di profondit&agrave; di 12 metri.</div>
+<div class="paragraph u-left">Per frequentare i corsi &egrave; necessario associarsi, facendo apposita domanda (la quota annuale &egrave; di &euro; 75,00 e si acquisiscono i diritti ed i doveri previsti dallo <a href={withBase('/uploads/2/4/1/4/24142153/nuovo_statuto_deep.pdf')} target="_blank">Statuto</a>).<br />Per i costi dei corsi <a href={withBase('/contatti.html')}>scriveteci</a>.<br /><strong>Bombola, apparato per respirare (erogatore), giubbetto equilibratore (GAV), zavorra, computer da immersione e bussola sono forniti in uso gratuito da noi</strong>.<br />Le spese di trasferta sono a carico degli allievi.<br />Il certificato medico di idoneit&agrave; alla pratica sportiva non agonistica deve essere rilasciato solo dal proprio medico di base o da uno specialista in medicina sportiva, che normalmente trovate presso i centri appositi.<br />L'et&agrave; minima per accedere al corso Open Water Diver &egrave; di 15 anni; gli allievi di et&agrave; inferiore (a partire dai 10 anni) saranno certificati Junior Open Water Diver e dovranno immergersi sotto la supervisione diretta di un Professional, in ambienti simili a quelli dove hanno ricevuto l'addestramento. Gli Junior Open Water Diver di 10 e 11 anni hanno un limite di profondit&agrave; di 12 metri.</div>
 
 <div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap u-mx-neg10">
 	<table class="wsite-multicol-table">
@@ -146,7 +147,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/contatti.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/contatti.html')} >
 <span class="wsite-button-inner">CONTATTI</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -158,7 +159,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/specialty.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/specialty.html')} >
 <span class="wsite-button-inner">BREVETTI AVANZATI</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -170,7 +171,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/ecology.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/ecology.html')} >
 <span class="wsite-button-inner">BREVETTI ECOLOGY</span>
 </a>
 <div class="u-h-0 u-clip"></div></div>

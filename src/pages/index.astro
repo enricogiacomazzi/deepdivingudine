@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout slug="index">
@@ -28,8 +29,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <h2 class="wsite-content-title u-center">&#8203;PERCH&Eacute; DEEP</h2>
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
-<a href='/chi-siamo.html'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/new-logo-deep-256_orig.webp" alt="Logo Deep Diving Udine" />
+<a href={withBase('/chi-siamo.html')}>
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/new-logo-deep-256_orig.webp')} alt="Logo Deep Diving Udine" />
 </a>
 <div class="u-block u-fs-90">Chi siamo</div>
 </div></div>
@@ -45,8 +46,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <h2 class="wsite-content-title u-center">&#8203;CORSI</h2>
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
-<a href='/corsi.html'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/corsi-brevetti-sub-udine-friuli_orig.webp" alt="Corsi e brevetti subacquei" />
+<a href={withBase('/corsi.html')}>
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/corsi-brevetti-sub-udine-friuli_orig.webp')} alt="Corsi e brevetti subacquei" />
 </a>
 <div class="u-block u-fs-90">Brevetto Open Water</div>
 </div></div>
@@ -63,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-10 u-mx-0 u-center">
 <a href='https://www.divessi.com/it/divecenter/717787' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/ssi-scuba-school-international_orig.webp" alt="Scuola subacquea SSI - Official Partner" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/ssi-scuba-school-international_orig.webp')} alt="Scuola subacquea SSI - Official Partner" />
 </a>
 <div class="u-block u-fs-90">Partner SSI</div>
 </div></div>
@@ -87,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					
 						
 
-<div class="paragraph"><strong>L'ASSOCIAZIONE</strong><br />Se volete qualche notizia in pi&ugrave; su DEEP DIVING UDINE e sugli istruttori subacquei, andate direttamente alla pagina <a href="/chi-siamo.html">CHI SIAMO</a>.<br />&#8203;Siamo a vostra disposizione ogni venerd&igrave; sera dalle 19.30 alle 20.30, in via Stiria 47, a Udine, Friuli Venezia Giulia.<br />Nella pagina <a href="/contatti.html">CONTATTI</a> trovate la mappa e vari modi per ottenere maggiori informazioni.</div>
+<div class="paragraph"><strong>L'ASSOCIAZIONE</strong><br />Se volete qualche notizia in pi&ugrave; su DEEP DIVING UDINE e sugli istruttori subacquei, andate direttamente alla pagina <a href={withBase('/chi-siamo.html')}>CHI SIAMO</a>.<br />&#8203;Siamo a vostra disposizione ogni venerd&igrave; sera dalle 19.30 alle 20.30, in via Stiria 47, a Udine, Friuli Venezia Giulia.<br />Nella pagina <a href={withBase('/contatti.html')}>CONTATTI</a> trovate la mappa e vari modi per ottenere maggiori informazioni.</div>
 
 
 					
@@ -95,7 +96,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 					
 						
 
-<div class="paragraph u-left"><strong>CORSI E PERCORSI SUBACQUEI</strong><br />Tutte le indicazioni utili ai principianti che vogliono fare il <strong>corso base Open Water Diver</strong> si trovano, ovviamente, alla pagina <a href="/corsi.html" title="">CORSI</a>.<br />Se avete gi&agrave; ottenuto il brevetto, anche di un'altra didattica, e intendete proseguire facendo esperienza, non c'&egrave; nulla di meglio che fare un corso subacqueo di specialit&agrave;: la pagina che fa per voi allora &egrave; <a href="/specialty.html" title="">SPECIALTY</a>.</div>
+<div class="paragraph u-left"><strong>CORSI E PERCORSI SUBACQUEI</strong><br />Tutte le indicazioni utili ai principianti che vogliono fare il <strong>corso base Open Water Diver</strong> si trovano, ovviamente, alla pagina <a href={withBase('/corsi.html')} title="">CORSI</a>.<br />Se avete gi&agrave; ottenuto il brevetto, anche di un'altra didattica, e intendete proseguire facendo esperienza, non c'&egrave; nulla di meglio che fare un corso subacqueo di specialit&agrave;: la pagina che fa per voi allora &egrave; <a href={withBase('/specialty.html')} title="">SPECIALTY</a>.</div>
 
 
 					
@@ -125,7 +126,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/chi-siamo.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/chi-siamo.html')} >
 <span class="wsite-button-inner">CHI SIAMO</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -137,7 +138,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/corsi.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/corsi.html')} >
 <span class="wsite-button-inner">CORSI</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -149,7 +150,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/contatti.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/contatti.html')} >
 <span class="wsite-button-inner">CONTATTI</span>
 </a>
 <div class="u-h-0 u-clip"></div></div>

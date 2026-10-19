@@ -1,6 +1,7 @@
 ---
 import { pageUrl } from '../data/pages';
 import { SOCIAL } from '../data/site';
+import { withBase } from '../utils/url';
 ---
 
 <footer>
@@ -8,7 +9,7 @@ import { SOCIAL } from '../data/site';
 		{
 			SOCIAL.map((link) => (
 				<a href={link.url} target="_blank" rel="noopener">
-					<img src={link.icon} loading="lazy" alt={link.name} />
+					<img src={withBase(link.icon)} loading="lazy" alt={link.name} />
 				</a>
 			))
 		}

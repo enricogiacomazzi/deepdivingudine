@@ -9,12 +9,16 @@ export default defineConfig({
 	compressHTML: false,
 	integrations: [
 		sitemap({
-			// The integration ignores build.format and emits /apnea, but the
-			// page is served at /apnea.html — put the extension back.
+			// The integration ignores build.format and emits extensionless
+			// URLs (/apnea), but the page is served at /apnea.html — put the
+			// extension back. The home page is the only route whose URL
+			// always ends in '/', regardless of base path, so that (not
+			// comparing the full pathname) is what tells it apart from
+			// every other page.
 			serialize(item) {
 				const url = new URL(item.url);
-				if (url.pathname !== '/') {
-					url.pathname = `${url.pathname.replace(/\/$/, '')}.html`;
+				if (!url.pathname.endsWith('/')) {
+					url.pathname = `${url.pathname}.html`;
 					item.url = url.href;
 				}
 				return item;

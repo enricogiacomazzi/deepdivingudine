@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/url';
+
 /*
  * Replaces the Weebly `wSlideshow` widget (jQuery + the 480 KB theme bundle).
  * The track is a native scroll-snap carousel: it swipes, scrolls and keyboard
@@ -43,7 +45,7 @@ const photos = [
 			photos.map((photo, i) => (
 				<li class="carousel-slide">
 					<img
-						src={photo.url}
+						src={withBase(photo.url)}
 						width={photo.width}
 						height={photo.height}
 						alt={photo.alt}

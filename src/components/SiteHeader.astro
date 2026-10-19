@@ -1,6 +1,7 @@
 ---
 import { pages, pageUrl } from '../data/pages';
 import { SITE_NAME } from '../data/site';
+import { withBase } from '../utils/url';
 
 interface Props {
 	/** Slug of the page being rendered, so its nav entry can be marked active. */
@@ -19,7 +20,7 @@ const { current } = Astro.props;
 <header>
 	<a class="logo" href={pageUrl('index')}>
 		<img
-			src="/uploads/2/4/1/4/24142153/logo-intestazione.png"
+			src={withBase('/uploads/2/4/1/4/24142153/logo-intestazione.png')}
 			alt={SITE_NAME}
 			width="242"
 			height="24"

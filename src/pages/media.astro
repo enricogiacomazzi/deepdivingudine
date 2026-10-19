@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 import PhotoCarousel from '../components/PhotoCarousel.astro';
 ---
 
@@ -20,7 +21,7 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-30 u-mx-0 u-center">
 <a href='https://www.youtube.com/@deepdivingudine' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/youtube-channel_orig.webp" alt="YouTube channel" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/youtube-channel_orig.webp')} alt="YouTube channel" />
 </a>
 <div class="u-block u-fs-90">Clicca, guarda, iscriviti!</div>
 </div></div>
@@ -43,7 +44,7 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/corsi.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/corsi.html')} >
 <span class="wsite-button-inner">CORSI</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -55,7 +56,7 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/contatti.html" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/contatti.html')} >
 <span class="wsite-button-inner">CONTATTI</span>
 </a>
 <div class="u-h-10 u-clip"></div></div>
@@ -67,7 +68,7 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 						
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/')} >
 <span class="wsite-button-inner">HOME</span>
 </a>
 <div class="u-h-0 u-clip"></div></div>

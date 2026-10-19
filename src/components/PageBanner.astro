@@ -1,5 +1,6 @@
 ---
 import type { PageMeta } from '../data/pages';
+import { withBase } from '../utils/url';
 
 interface Props {
 	page: PageMeta;
@@ -15,7 +16,7 @@ const { page } = Astro.props;
 */}
 <div
 	class:list={['page-banner', `banner-${page.bannerSize}`]}
-	style={`--banner-image: url('${page.bannerImage}'); --banner-position: ${page.bannerPosition};`}
+	style={`--banner-image: url('${withBase(page.bannerImage)}'); --banner-position: ${page.bannerPosition};`}
 >
 	<slot />
 </div>

@@ -3,6 +3,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PageBanner from '../components/PageBanner.astro';
 import { getPage, pageUrl } from '../data/pages';
+import { withBase } from '../utils/url';
 import { SITE_NAME, SITE_URL, STRUCTURED_DATA } from '../data/site';
 
 interface Props {
@@ -37,21 +38,21 @@ const canonical = new URL(pageUrl(slug), SITE_URL).href;
 			))
 		}
 
-		<link rel="apple-touch-icon" sizes="57x57" href="/files/theme/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="60x60" href="/files/theme/apple-touch-icon-60x60.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="/files/theme/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="/files/theme/apple-touch-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="/files/theme/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="/files/theme/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="/files/theme/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="/files/theme/apple-touch-icon-152x152.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/files/theme/apple-touch-icon-180x180.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/files/theme/favicon-16x16.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/files/theme/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="96x96" href="/files/theme/favicon-96x96.png" />
-		<link rel="icon" type="image/png" sizes="192x192" href="/files/theme/android-chrome-192x192.png" />
-		<link rel="icon" type="image/png" sizes="194x194" href="/files/theme/favicon-194x194.png" />
-		<link rel="shortcut icon" href="/files/theme/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="57x57" href={withBase('/files/theme/apple-touch-icon-57x57.png')} />
+		<link rel="apple-touch-icon" sizes="60x60" href={withBase('/files/theme/apple-touch-icon-60x60.png')} />
+		<link rel="apple-touch-icon" sizes="72x72" href={withBase('/files/theme/apple-touch-icon-72x72.png')} />
+		<link rel="apple-touch-icon" sizes="76x76" href={withBase('/files/theme/apple-touch-icon-76x76.png')} />
+		<link rel="apple-touch-icon" sizes="114x114" href={withBase('/files/theme/apple-touch-icon-114x114.png')} />
+		<link rel="apple-touch-icon" sizes="120x120" href={withBase('/files/theme/apple-touch-icon-120x120.png')} />
+		<link rel="apple-touch-icon" sizes="144x144" href={withBase('/files/theme/apple-touch-icon-144x144.png')} />
+		<link rel="apple-touch-icon" sizes="152x152" href={withBase('/files/theme/apple-touch-icon-152x152.png')} />
+		<link rel="apple-touch-icon" sizes="180x180" href={withBase('/files/theme/apple-touch-icon-180x180.png')} />
+		<link rel="icon" type="image/png" sizes="16x16" href={withBase('/files/theme/favicon-16x16.png')} />
+		<link rel="icon" type="image/png" sizes="32x32" href={withBase('/files/theme/favicon-32x32.png')} />
+		<link rel="icon" type="image/png" sizes="96x96" href={withBase('/files/theme/favicon-96x96.png')} />
+		<link rel="icon" type="image/png" sizes="192x192" href={withBase('/files/theme/android-chrome-192x192.png')} />
+		<link rel="icon" type="image/png" sizes="194x194" href={withBase('/files/theme/favicon-194x194.png')} />
+		<link rel="shortcut icon" href={withBase('/files/theme/favicon.ico')} />
 
 		<meta name="theme-color" content="#000055" />
 		<meta name="msapplication-TileColor" content="#000055" />
@@ -94,15 +95,15 @@ const canonical = new URL(pageUrl(slug), SITE_URL).href;
 			gtag('config', 'G-YRHJWQXPEJ');
 		</script>
 
-		<link rel="stylesheet" href="/css/main.css" />
-		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href={withBase('/css/main.css')} />
+		<link rel="stylesheet" href={withBase('/css/style.css')} />
 
 		{/* The banner image is the LCP on every page, so start it with the stylesheet. */}
 		<link
 			rel="preload"
 			fetchpriority="high"
 			as="image"
-			href={page.bannerImage}
+			href={withBase(page.bannerImage)}
 			type={page.bannerImage.endsWith('.webp') ? 'image/webp' : undefined}
 		/>
 	</head>

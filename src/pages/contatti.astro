@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout slug="contatti">
@@ -29,7 +30,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-20 u-mx-0 u-center">
 <a href='https://wa.me/393701359305' target='_blank'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/whatsapp-chat_orig.webp" alt="Chat on Whatsapp" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/whatsapp-chat_orig.webp')} alt="Chat on Whatsapp" />
 </a>
 <div class="u-block u-fs-90"></div>
 </div></div>
@@ -42,7 +43,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-20 u-mx-0 u-center">
 <a href='http://m.me/718553978234530'>
-<img class="u-w-auto u-max-w-100" src="/uploads/2/4/1/4/24142153/chat-messenger_orig.webp" alt="Chat on Messenger" />
+<img class="u-w-auto u-max-w-100" src={withBase('/uploads/2/4/1/4/24142153/chat-messenger_orig.webp')} alt="Chat on Messenger" />
 </a>
 <div class="u-block u-fs-90"></div>
 </div></div>
@@ -153,7 +154,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <td class="u-center">
 <div><div class="u-font-lato u-center">
 <a href="http://www.facebook.com/corsisubudine" target="_blank">
-<img class="u-w-auto u-max-w-100" src="/files/theme/deep_facebook_icon.webp" loading="lazy" alt="Facebook">
+<img class="u-w-auto u-max-w-100" src={withBase('/files/theme/deep_facebook_icon.webp')} loading="lazy" alt="Facebook">
 </a>
 <div class="u-block u-fs-90 u-pt-5"><strong>Facebook</strong></div>
 </div></div>
@@ -161,7 +162,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <td class="u-center">
 <div><div class="u-center">
 <a href="https://instagram.com/deepdivingudine/" target="_blank">
-<img class="u-w-auto u-max-w-100" src="/files/theme/deep_instagram_icon.webp" loading="lazy" alt="Instagram">
+<img class="u-w-auto u-max-w-100" src={withBase('/files/theme/deep_instagram_icon.webp')} loading="lazy" alt="Instagram">
 </a>
 <div class="u-block u-fs-90 u-pt-5"><strong>Instagram</strong></div>
 </div></div>
@@ -169,7 +170,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <td class="u-center">
 <div><div class="u-center">
 <a href="https://www.youtube.com/@deepdivingudine" target="_blank">
-<img class="u-w-auto u-max-w-100" src="/files/theme/deep_youtube_icon.webp" loading="lazy" alt="YouTube">
+<img class="u-w-auto u-max-w-100" src={withBase('/files/theme/deep_youtube_icon.webp')} loading="lazy" alt="YouTube">
 </a>
 <div class="u-block u-fs-90 u-pt-5"><strong>YouTube</strong></div>
 </div></div>
@@ -188,7 +189,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <div class="paragraph u-center"><strong>&#8203;Sede legale e operativa: via Stiria 47 - UDINE</strong><br />CAP 33100 - Friuli Venezia Giulia - IT</div>
 
 <div class="u-center"><div class="u-h-0 u-clip"></div>
-<a class="wsite-button wsite-button-large wsite-button-normal" href="/" >
+<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/')} >
 <span class="wsite-button-inner">HOME</span>
 </a>
 <div class="u-h-0 u-clip"></div></div>

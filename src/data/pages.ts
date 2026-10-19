@@ -1,3 +1,5 @@
+import { withBase } from '../utils/url';
+
 export interface PageMeta {
 	/** File name without extension; also the URL (`/<slug>.html`). */
 	slug: string;
@@ -225,5 +227,5 @@ export function getPage(slug: string): PageMeta {
 
 /** The home page lives at `/`, every other page at `/<slug>.html`. */
 export function pageUrl(slug: string): string {
-	return slug === 'index' ? '/' : `/${slug}.html`;
+	return withBase(slug === 'index' ? '/' : `/${slug}.html`);
 }
