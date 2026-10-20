@@ -79,6 +79,61 @@ small {
 	grid-template-columns: minmax(0, 33fr) minmax(0, 42fr) minmax(0, 25fr);
 }
 
+.columns.cols-2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 40px;
+}
+
+/* Form fields span the whole form instead of Weebly's 400px cap. */
+.wsite-form-field {
+	max-width: none;
+}
+
+/* Two inputs sharing one form field's width (first and last name), so the
+ * pair lines up with the full-width fields below it. */
+.form-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+}
+
+/* The submit button, flush with the right edge of the fields above. */
+.form-actions {
+	margin-top: 10px;
+	text-align: right;
+}
+
+/* Images side by side (formerly Weebly's imageGallery), each shown whole:
+ * two per row by default, three or four with .cols-3 / .cols-4. */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+	margin: 25px 5px;
+}
+
+.gallery img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.gallery.cols-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gallery.cols-4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Three equal columns with each item centred, so a row of buttons lines up
+ * with the footer's social icons whatever the buttons' widths. */
+.flex-row {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	justify-items: center;
+}
+
 /*
  * Every divider in #main is a plain <hr>: a full-width 1px light grey line
  * with 20px above and below.

@@ -1,25 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/url';
+import { ecologies } from '../data/ecologies';
 ---
 
-<BaseLayout slug="ecology">
-	<h2 class="lead">SAVE THE OCEANS!</h2>
-
+<BaseLayout slug="ecology" title="SAVE THE OCEANS!">
 	<p>Se sei un naturalista subacqueo in erba, partecipa ai nostri corsi <strong>Specialty di ecologia</strong>! Sono il modo perfetto per migliorare la tua esperienza di immersione, imparando a conoscere le diverse forme di vita marina, come funzionano gli ecosistemi oceanici e come immergersi in sicurezza con squali, razze e altro. Qualunque sia la tua passione, abbiamo una specialit&agrave; per te! Qualsiasi snorkeler dai 10 anni in su pu&ograve; partecipare a questi corsi SSI Ecology, le sessioni in acque libere sono opzionali e il corso pu&ograve; essere portato a termine online. Questo lo rende perfetto per tutti. Inizia ora!</p>
 
-	<p><strong>Clicca sulle foto per maggiori informazioni sulla singola specialit&agrave; e per un'anteprima gratuita del corso.</strong></p>
+	<p>
+		<strong>Clicca sulle foto per maggiori informazioni sulla singola specialit&agrave; e per un'anteprima gratuita del corso.</strong>
+	</p>
 
 	<h2>BREVETTI ECOLOGICI</h2>
 
-	<div><div class="u-h-0 u-clip"></div>
-		<div id='145371123363406549-gallery' class='imageGallery' style='line-height: 0px; padding: 0; margin: 0'>
-			<div id='145371123363406549-imageContainer0' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer0' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/marine-ecology' target='_blank'><img src={withBase('/uploads/marine-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Marine Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer1' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer1' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/shark-ecology' target='_blank'><img src={withBase('/uploads/shark-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Shark Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer2' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer2' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/manta-and-ray-ecology' target='_blank'><img src={withBase('/uploads/manta-ray-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Manta &amp; Ray Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer3' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer3' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/fish-identification' target='_blank'><img src={withBase('/uploads/fish-identification.jfif')} class='galleryImage' width='400' height='254' alt='Fish Identification' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer4' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer4' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/coral-identification' target='_blank'><img src={withBase('/uploads/coral-identification.jfif')} class='galleryImage' width='400' height='254' alt='Coral Identification' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer5' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer5' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/sea-turtle-ecology' target='_blank'><img src={withBase('/uploads/sea-turtle-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Sea Turtle Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer6' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer6' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/marine-mammal-ecology' target='_blank'><img src={withBase('/uploads/marine-mammal-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Marine Mammal Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer7' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer7' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/marine-invertebrate-ecology' target='_blank'><img src={withBase('/uploads/marine-invertebrate-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Marine Invertebrate Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><div id='145371123363406549-imageContainer8' style='float:left;width:33.28%;margin:0;'><div id='145371123363406549-insideImageContainer8' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75.08%;'><div class='galleryInnerImageHolder'><a href='https://www.divessi.com/it/get-certified/environment/nudibranch-ecology' target='_blank'><img src={withBase('/uploads/nudibranch-ecology.jfif')} class='galleryImage' width='400' height='254' alt='Nudibranch Ecology' style='position:absolute;border:0;width:100%;top:7.71%;left:0%' /></a></div></div></div></div><span style='display: block; clear: both; height: 0px; overflow: hidden;'></span>
-		</div>
+	<div class="gallery cols-3">
+		{
+			ecologies.map((item) => (
+				<a href={item.link} target="_blank">
+					<img src={withBase(item.img)} width="400" height="254" loading="lazy" alt={item.alt} />
+				</a>
+			))
+		}
+	</div>
 
-		<div class="u-h-0 u-clip"></div></div>
-
-	<p><strong>DEEP DIVING UDINE &egrave; da sempre impegnato a salvaguardare l'ambiente sottomarino</strong> e quindi siamo felici che SSI, la nostra didattica, sia in prima linea nella meritoria opera di protezione degli oceani.<br /><strong>Unisciti a noi, registrati e scarica l'app gratuita MySSI, troverai il corso Blue Oceans ed anche i primi capitoli dei corsi principianti che potresti fare.</strong></p>
+	<p>
+		<strong>DEEP DIVING UDINE &egrave; da sempre impegnato a salvaguardare l'ambiente sottomarino</strong> e quindi siamo felici che SSI, la nostra didattica, 
+		sia in prima linea nella meritoria opera di protezione degli oceani.
+		<br />
+		<strong>Unisciti a noi, registrati e scarica l'app gratuita MySSI, troverai il corso Blue Oceans ed anche i primi capitoli dei corsi principianti che potresti fare.</strong>
+	</p>
 
 	<div><div class="wsite-image wsite-image-border-none  u-pt-0 u-pb-40 u-mx-0 u-center">
 			<a href='https://www.divessi.com/it/get-certified/environment/blue-oceans' target='_blank'>
@@ -57,7 +66,15 @@ import { withBase } from '../utils/url';
 
 	<hr />
 
-	<p>La vita sotto il mare &egrave; incredibilmente varia e affascinante e gi&agrave; col <strong>brevetto Open Water Diver</strong>, una action cam o una fotocamera compatta (alcune non hanno nemmeno bisogno di custodie impermeabili) si possono immortalare ricordi emozionanti.<br />Anche facendo snorkeling non mancano occasioni di incontri particolari.<br /><strong>Se avete ancora un po' di tempo, date un'occhiata ai nostri video e alle nostre foto nella pagina </strong><a href={withBase('/media.html')} title="">MEDIA</a> (niente di professionale, spesso &egrave; questione di fortuna...).</p>
+	<p>
+		La vita sotto il mare &egrave; incredibilmente varia e affascinante e gi&agrave; col <strong>brevetto Open Water Diver</strong>, una action cam o una 
+		fotocamera compatta (alcune non hanno nemmeno bisogno di custodie impermeabili) si possono immortalare ricordi emozionanti.
+		<br />
+		Anche facendo snorkeling non mancano occasioni di incontri particolari.
+		<br />
+		<strong>Se avete ancora un po' di tempo, date un'occhiata ai nostri video e alle nostre foto nella pagina 
+			</strong><a href={withBase('/media.html')} title="">MEDIA</a> (niente di professionale, spesso &egrave; questione di fortuna...).
+		</p>
 
 	<div class="columns">
 		<div>
@@ -82,6 +99,4 @@ import { withBase } from '../utils/url';
 			</div>
 		</div>
 	</div>
-
-	<div class="wsite-spacer u-h-50"></div>
 </BaseLayout>

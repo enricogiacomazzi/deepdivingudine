@@ -3,9 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/url';
 ---
 
-<BaseLayout slug="apnea">
-	<h2 class="lead">CON UN RESPIRO...</h2>
-
+<BaseLayout slug="apnea" title="CON UN RESPIRO...">
 	<blockquote>
 		Per conoscere davvero il mare, bisogna prima conoscere la propria anima e il proprio cuore.
 		<br />
@@ -14,14 +12,17 @@ import { withBase } from '../utils/url';
 
 	<hr />
 
-	<p>Quando pensi al freediving, probabilmente immagini un apneista che indossa una lunga pinna su ogni piede e una muta a due pezzi lucida, che scende con grazia dalla superficie lungo una cima di immersione.<br />Stai per scoprire che questo &egrave; solo uno dei tanti tipi di attivit&agrave; freediving. Il mondo del freediving &egrave; pieno di variet&agrave;: ogni attivit&agrave; offre nuove esperienze, sfide e avventure che condividerai con i tuoi compagni freediver.</p>
+	<p>
+		Quando pensi al freediving, probabilmente immagini un apneista che indossa una lunga pinna su ogni piede e una muta a due pezzi lucida, 
+		che scende con grazia dalla superficie lungo una cima di immersione.<br />Stai per scoprire che questo &egrave; solo uno dei tanti tipi 
+		di attivit&agrave; freediving. Il mondo del freediving &egrave; pieno di variet&agrave;: ogni attivit&agrave; offre nuove esperienze, 
+		sfide e avventure che condividerai con i tuoi compagni freediver.
+	</p>
 
-	<div><div class="u-h-20 u-clip"></div>
-		<div id='859035518332035947-gallery' class='imageGallery' style='line-height: 0px; padding: 0; margin: 0'>
-			<div id='859035518332035947-imageContainer0' style='float:left;width:49.95%;margin:0;'><div id='859035518332035947-insideImageContainer0' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75%;overflow:hidden;'><div class='galleryInnerImageHolder'><a href={withBase('/uploads/basic-freediving_orig.jpg')} rel='lightbox[gallery859035518332035947]'><img src={withBase('/uploads/basic-freediving.jpg')} class='galleryImage' width='1000' height='635' style='position:absolute;border:0;width:118.11%;top:0%;left:-9.06%' /></a></div></div></div></div><div id='859035518332035947-imageContainer1' style='float:left;width:49.95%;margin:0;'><div id='859035518332035947-insideImageContainer1' style='position:relative;margin:5px;'><div class='galleryImageHolder' style='position:relative; width:100%; padding:0 0 75%;overflow:hidden;'><div class='galleryInnerImageHolder'><a href={withBase('/uploads/800_orig.jpg')} rel='lightbox[gallery859035518332035947]'><img src={withBase('/uploads/800.jpg')} class='galleryImage' width='800' height='508' style='position:absolute;border:0;width:118.11%;top:0%;left:-9.06%' /></a></div></div></div></div><span style='display: block; clear: both; height: 0px; overflow: hidden;'></span>
-		</div>
-
-		<div class="u-h-20 u-clip"></div></div>
+	<div class="gallery">
+		<img src={withBase('/uploads/basic-freediving.jpg')} width="1000" height="635" loading="lazy" alt="Corso SSI Basic Freediver" />
+		<img src={withBase('/uploads/800.jpg')} width="800" height="508" loading="lazy" alt="Corso SSI Freediver" />
+	</div>
 
 	<hr />
 
@@ -79,6 +80,4 @@ import { withBase } from '../utils/url';
 			</div>
 		</div>
 	</div>
-
-	<div class="wsite-spacer u-h-50"></div>
 </BaseLayout>

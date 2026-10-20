@@ -9,9 +9,10 @@ import { SITE_NAME, SITE_URL, STRUCTURED_DATA } from '../data/site';
 interface Props {
 	/** Which entry of src/data/pages.ts this page is. */
 	slug: string;
+	title?: string;
 }
 
-const { slug } = Astro.props;
+const { slug, title } = Astro.props;
 const page = getPage(slug);
 const canonical = new URL(pageUrl(slug), SITE_URL).href;
 ---
@@ -123,7 +124,9 @@ const canonical = new URL(pageUrl(slug), SITE_URL).href;
 		<div id="main">
 			<div class="container">
 				<div id="wsite-content" class="wsite-elements wsite-not-footer">
+					{title && <h2 class="lead">{title}</h2>}
 					<slot />
+					<div class="wsite-spacer u-h-50"></div>
 				</div>
 			</div>
 		</div>

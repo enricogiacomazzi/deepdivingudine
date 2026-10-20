@@ -3,17 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../utils/url';
 ---
 
-<BaseLayout slug="corsi">
-	<h2 class="lead">COME DIVENTARE BRAVI SUBACQUEI</h2>
+<BaseLayout slug="corsi" title="COME DIVENTARE BRAVI SUBACQUEI">
+	<p>
+		Se hai pensato ad un corso subacqueo, questa &egrave; la pagina giusta, ci sono 
+		<strong>tutte le informazioni utili per iniziare la tua avventura sott'acqua </strong>
+		e ottenere il brevetto <strong>Open Water Diver</strong>.<br />Se invece il brevetto ce 
+		l'hai gi&agrave; (<a href={withBase('/uploads/standard_ssi_equivalenza.pdf')} target="_blank">anche di un'altra didattica</a>) 
+		e vuoi progredire, vai direttamente alla pagina dedicata alle specialit&agrave; ricreative e tecniche.
+		<br />
+		Nella pagina <a href={withBase('/ecology.html')}>ECOLOGY</a> trovi infine le specialit&agrave; dedicate all'ambiente marino.
+	</p>
 
-	<p>Se hai pensato ad un corso subacqueo, questa &egrave; la pagina giusta, ci sono <strong>tutte le informazioni utili per iniziare la tua avventura sott'acqua </strong>e ottenere il brevetto <strong>Open Water Diver</strong>.<br />Se invece il brevetto ce l'hai gi&agrave; (<a href={withBase('/uploads/standard_ssi_equivalenza.pdf')} target="_blank">anche di un'altra didattica</a>) e vuoi progredire, vai direttamente alla pagina dedicata alle specialit&agrave; ricreative e tecniche.<br />Nella pagina <a href={withBase('/ecology.html')}>ECOLOGY</a> trovi infine le specialit&agrave; dedicate all'ambiente marino.</p>
-
-	<div class="u-center"><div class="u-h-0 u-clip"></div>
+	<div class="u-center">
+		<div class="u-h-0 u-clip"></div>
 		<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/specialty.html')} >
 			<span class="wsite-button-inner">Già brevettato? Clicca qui</span>
 		</a>
 		<div class="u-h-0 u-clip"></div></div>
-
 	<div class="wsite-spacer u-h-50"></div>
 
 	<hr />
@@ -21,7 +27,6 @@ import { withBase } from '../utils/url';
 	<div class="columns">
 		<div>
 			<h2>REQUISITI</h2>
-
 			<div class="wsite-image u-center u-pb-10">
 				<a href={withBase('/uploads/standard_ssi_acquaticità.pdf')} target='_blank'>
 					<img class="u-max-w-100" src={withBase('/uploads/requisiti-website_orig.webp')} alt="Requisiti" />
@@ -33,7 +38,6 @@ import { withBase } from '../utils/url';
 		</div>
 		<div>
 			<h2>TEORIA</h2>
-
 			<div class="wsite-image u-center u-pb-10">
 				<a href='https://training.divessi.com/index.php?id=4279&L=6&logintype=login&extauth[action]=previewaccess' target='_blank'>
 					<img class="u-max-w-100" src={withBase('/uploads/teoria-website_orig.webp')} alt="Teoria" />
@@ -59,7 +63,7 @@ import { withBase } from '../utils/url';
 
 	<p><strong>Leggete anche le avvertenze importanti qui sotto</strong> e poi contattateci per qualunque altra informazione oppure seguiteci sui social media per essere aggiornati sulle date di inizio dei corsi.<br /><strong>Ricordatevi comunque di registrarvi sul sito SSI e di scaricare gratuitamente l'app per dispositivi mobili.</strong></p>
 
-	<div class="columns">
+	<div class="flex-row">
 		<div>
 			<div class="wsite-image u-center">
 				<a href='https://www.divessi.com/register/ref/717787' target='_blank'>
@@ -90,7 +94,25 @@ import { withBase } from '../utils/url';
 
 	<h2>AVVERTENZE IMPORTANTI</h2>
 
-	<p>Per frequentare i corsi &egrave; necessario associarsi, facendo apposita domanda (la quota annuale &egrave; di &euro; 75,00 e si acquisiscono i diritti ed i doveri previsti dallo <a href={withBase('/uploads/nuovo_statuto_deep.pdf')} target="_blank">Statuto</a>).<br />Per i costi dei corsi <a href={withBase('/contatti.html')}>scriveteci</a>.<br /><strong>Bombola, apparato per respirare (erogatore), giubbetto equilibratore (GAV), zavorra, computer da immersione e bussola sono forniti in uso gratuito da noi</strong>.<br />Le spese di trasferta sono a carico degli allievi.<br />Il certificato medico di idoneit&agrave; alla pratica sportiva non agonistica deve essere rilasciato solo dal proprio medico di base o da uno specialista in medicina sportiva, che normalmente trovate presso i centri appositi.<br />L'et&agrave; minima per accedere al corso Open Water Diver &egrave; di 15 anni; gli allievi di et&agrave; inferiore (a partire dai 10 anni) saranno certificati Junior Open Water Diver e dovranno immergersi sotto la supervisione diretta di un Professional, in ambienti simili a quelli dove hanno ricevuto l'addestramento. Gli Junior Open Water Diver di 10 e 11 anni hanno un limite di profondit&agrave; di 12 metri.</p>
+	<p>
+		Per frequentare i corsi &egrave; necessario associarsi, facendo apposita domanda (la quota annuale &egrave; di &euro; 75,00 
+		e si acquisiscono i diritti ed i doveri previsti dallo <a href={withBase('/uploads/nuovo_statuto_deep.pdf')} target="_blank">Statuto</a>).
+		<br />
+		Per i costi dei corsi <a href={withBase('/contatti.html')}>scriveteci</a>.
+		<br />
+		<strong>
+			Bombola, apparato per respirare (erogatore), giubbetto equilibratore (GAV), zavorra, computer da immersione e bussola sono forniti in uso gratuito da noi
+		</strong>.
+		<br />
+		Le spese di trasferta sono a carico degli allievi.
+		<br />
+		Il certificato medico di idoneit&agrave; alla pratica sportiva non agonistica deve essere rilasciato solo dal proprio medico di base o 
+		da uno specialista in medicina sportiva, che normalmente trovate presso i centri appositi.
+		<br />
+		L'et&agrave; minima per accedere al corso Open Water Diver &egrave; di 15 anni; gli allievi di et&agrave; inferiore (a partire dai 10 anni) 
+		saranno certificati Junior Open Water Diver e dovranno immergersi sotto la supervisione diretta di un Professional, in ambienti simili a 
+		quelli dove hanno ricevuto l'addestramento. Gli Junior Open Water Diver di 10 e 11 anni hanno un limite di profondit&agrave; di 12 metri.
+		</p>
 
 	<div class="columns">
 		<div>
@@ -115,6 +137,4 @@ import { withBase } from '../utils/url';
 			</div>
 		</div>
 	</div>
-
-	<div class="wsite-spacer u-h-50"></div>
 </BaseLayout>

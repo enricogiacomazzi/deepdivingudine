@@ -64,6 +64,10 @@ header .logo img {
 }
 
 .columns,
-.columns.staff {
+.columns.staff,
+.columns.cols-2,
+.gallery,
+.gallery.cols-3,
+.gallery.cols-4 {
 	grid-template-columns: minmax(0, 1fr);
 }
