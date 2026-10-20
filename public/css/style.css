@@ -32,6 +32,13 @@ h2 {
 	text-align: center;
 }
 
+/* Opening title of each page, right below the banner. The bottom margin
+ * stays at the plain h2's 13px instead of scaling with the larger font. */
+h2.lead {
+	font-size: 32px;
+	margin-bottom: 13px;
+}
+
 /* ---------------------------------------------------------------- header -- */
 
 header {
