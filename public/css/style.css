@@ -39,6 +39,57 @@ h2.lead {
 	margin-bottom: 13px;
 }
 
+/* Quotes in #main are centred; font and colour still come from main.css. */
+blockquote {
+	text-align: center;
+}
+
+/* Body text in #main. Font, size, colour and spacing still come from
+ * main.css's shared "div.paragraph, p" rules; these were .paragraph-only. */
+#wsite-content p {
+	word-wrap: break-word;
+}
+
+#wsite-content p a {
+	color: #24678d;
+}
+
+#wsite-content p a:hover {
+	color: #2a7fff;
+}
+
+/* Secondary text in paragraphs (staff certifications and verification links),
+ * at the 13px that <font size="2"> used to give. */
+small {
+	font-size: 13px;
+}
+
+/*
+ * Side-by-side columns in #main (formerly Weebly's wsite-multicol tables).
+ * Three equal columns; .staff gives the photo / certifications / badges
+ * layout of the staff page. mobile.css stacks them into one column.
+ */
+.columns {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1em 20px;
+}
+
+.columns.staff {
+	grid-template-columns: minmax(0, 33fr) minmax(0, 42fr) minmax(0, 25fr);
+}
+
+/*
+ * Every divider in #main is a plain <hr>: a full-width 1px light grey line
+ * with 20px above and below.
+ */
+hr {
+	height: 1px;
+	margin: 20px 0;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0.13);
+}
+
 /* ---------------------------------------------------------------- header -- */
 
 header {

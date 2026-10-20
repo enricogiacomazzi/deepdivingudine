@@ -62,3 +62,8 @@ header .logo img {
 	align-items: flex-start;
 	width: 100%;
 }
+
+.columns,
+.columns.staff {
+	grid-template-columns: minmax(0, 1fr);
+}

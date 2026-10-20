@@ -7,15 +7,13 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 <BaseLayout slug="media">
 	<h2 class="lead">SPLASH, CLICK, WOW!</h2>
 
-	<blockquote class="u-center"><span>Il desiderio di scoprire, la voglia di emozionare, il gusto di catturare,&nbsp;</span><span>tre concetti che riassumono l'arte della fotografia.</span><br /><span>(Helmut Newton)</span></blockquote>
+	<blockquote>Il desiderio di scoprire, la voglia di emozionare, il gusto di catturare, tre concetti che riassumono l'arte della fotografia.<br />(Helmut Newton)</blockquote>
 
-	<div><div class="u-h-10 u-clip u-w-70"></div>
-		<hr class="styled-hr u-w-70" />
-		<div class="u-h-20 u-clip u-w-70"></div></div>
+	<hr />
 
 	<h2>I VIAGGI, I COLORI</h2>
 
-	<div class="paragraph">Un po' di fortuna e tanta passione ci hanno portato a visitare alcuni dei pi&ugrave; bei siti di immersione in giro per il mondo, senza per&ograve; dimenticare il nostro Mar Mediterraneo, che riserva sempre piacevoli sorprese.<br />Ogni tanto ci capita anche di girare un video o di scattare qualche foto, per puro diletto.<br />I video li trovate sul <strong><a href="https://www.youtube.com/@deepdivingudine" target="_blank">nostro canale YouTube</a></strong>, le foto potete guardarle qua sotto, nella speranza che vi piacciano e, soprattutto, che vi convincano a vedere di persona le meraviglie del mondo sommerso.</div>
+	<p>Un po' di fortuna e tanta passione ci hanno portato a visitare alcuni dei pi&ugrave; bei siti di immersione in giro per il mondo, senza per&ograve; dimenticare il nostro Mar Mediterraneo, che riserva sempre piacevoli sorprese.<br />Ogni tanto ci capita anche di girare un video o di scattare qualche foto, per puro diletto.<br />I video li trovate sul <strong><a href="https://www.youtube.com/@deepdivingudine" target="_blank">nostro canale YouTube</a></strong>, le foto potete guardarle qua sotto, nella speranza che vi piacciano e, soprattutto, che vi convincano a vedere di persona le meraviglie del mondo sommerso.</p>
 
 	<h2>VIDEO</h2>
 
@@ -35,50 +33,29 @@ import PhotoCarousel from '../components/PhotoCarousel.astro';
 
 	<div class="wsite-spacer u-h-50"></div>
 
-	<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap u-mx-neg15">
-				<table class="wsite-multicol-table">
-					<tbody class="wsite-multicol-tbody">
-						<tr class="wsite-multicol-tr">
-							<td class="wsite-multicol-col u-w-33 u-px-15">
-
-
-
-								<div class="u-center"><div class="u-h-0 u-clip"></div>
-									<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/corsi.html')} >
-										<span class="wsite-button-inner">CORSI</span>
-									</a>
-									<div class="u-h-10 u-clip"></div></div>
-
-
-
-							</td>				<td class="wsite-multicol-col u-w-33 u-px-15">
-
-
-
-								<div class="u-center"><div class="u-h-0 u-clip"></div>
-									<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/contatti.html')} >
-										<span class="wsite-button-inner">CONTATTI</span>
-									</a>
-									<div class="u-h-10 u-clip"></div></div>
-
-
-
-							</td>				<td class="wsite-multicol-col u-w-33 u-px-15">
-
-
-
-								<div class="u-center"><div class="u-h-0 u-clip"></div>
-									<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/')} >
-										<span class="wsite-button-inner">HOME</span>
-									</a>
-									<div class="u-h-0 u-clip"></div></div>
-
-
-
-						</td>			</tr>
-					</tbody>
-				</table>
-	</div></div></div>
+	<div class="columns">
+		<div>
+			<div class="u-center">
+				<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/corsi.html')} >
+					<span class="wsite-button-inner">CORSI</span>
+				</a>
+				<div class="u-h-10 u-clip"></div></div>
+		</div>
+		<div>
+			<div class="u-center">
+				<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/contatti.html')} >
+					<span class="wsite-button-inner">CONTATTI</span>
+				</a>
+				<div class="u-h-10 u-clip"></div></div>
+		</div>
+		<div>
+			<div class="u-center">
+				<a class="wsite-button wsite-button-large wsite-button-normal" href={withBase('/')} >
+					<span class="wsite-button-inner">HOME</span>
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<div class="wsite-spacer u-h-50"></div>
 </BaseLayout>
