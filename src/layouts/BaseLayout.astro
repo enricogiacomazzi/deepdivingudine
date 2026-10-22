@@ -63,11 +63,7 @@ const canonical = new URL(pageUrl(slug), SITE_URL).href;
 		/>
 		<meta name="msvalidate.01" content="30723EC2901FE43EDE736D2572189630" />
 
-		{
-			STRUCTURED_DATA.map((data) => (
-				<script type="application/ld+json" set:html={JSON.stringify(data)} />
-			))
-		}
+		<script type="application/ld+json" set:html={JSON.stringify(STRUCTURED_DATA)} />
 
 		{/*
 			Consent manager. `blockingmode="auto"` holds back the tags below until
