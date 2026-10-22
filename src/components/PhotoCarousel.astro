@@ -5,7 +5,8 @@ import { withBase } from '../utils/url';
  * Replaces the Weebly `wSlideshow` widget (jQuery + the 480 KB theme bundle).
  * The track is a native scroll-snap carousel: it swipes, scrolls and keyboard
  * -navigates with no JavaScript at all. The inline script only adds the
- * previous/next buttons and the 5s autoplay the old widget had.
+ * previous/next buttons and the 5s autoplay the old widget had, with the
+ * pause control and stop-on-focus behaviour of the WAI-ARIA APG carousel.
  */
 const photos = [
 	{ url: '/uploads/8615128.jpg', width: 400, height: 277, alt: 'Barracuda a Sipadan' },
@@ -39,11 +40,11 @@ const photos = [
 	{ url: '/uploads/tridacna.jpeg', width: 800, height: 600, alt: 'Tridacna' },];
 ---
 
-<div class="photo-carousel" aria-roledescription="carousel" aria-label="Foto subacquee">
-	<ul class="carousel-track" tabindex="0">
+<section class="photo-carousel" aria-roledescription="carousel" aria-label="Foto subacquee">
+	<div class="carousel-track" tabindex="0" aria-label="Foto" aria-live="polite">
 		{
 			photos.map((photo, i) => (
-				<li class="carousel-slide">
+				<div class="carousel-slide" role="group" aria-roledescription="slide" aria-label={`${i + 1} di ${photos.length}`}>
 					<img
 						src={withBase(photo.url)}
 						width={photo.width}
@@ -53,13 +54,14 @@ const photos = [
 						decoding="async"
 					/>
 					<p class="carousel-caption">{photo.alt}</p>
-				</li>
+				</div>
 			))
 		}
-	</ul>
+	</div>
+	<button class="carousel-toggle" type="button" aria-label="Metti in pausa le foto" hidden>&#10074;&#10074;</button>
 	<button class="carousel-prev" type="button" aria-label="Foto precedente" hidden>&#8249;</button>
 	<button class="carousel-next" type="button" aria-label="Foto successiva" hidden>&#8250;</button>
-</div>
+</section>
 
 <style>
 	.photo-carousel {
@@ -70,9 +72,6 @@ const photos = [
 
 	.carousel-track {
 		display: flex;
-		margin: 0;
-		padding: 0;
-		list-style: none;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 		scroll-behavior: smooth;
@@ -86,7 +85,6 @@ const photos = [
 	.carousel-slide {
 		flex: 0 0 100%;
 		scroll-snap-align: center;
-		margin: 0;
 		display: flex;
 		flex-direction: column;
 	}
@@ -106,11 +104,10 @@ const photos = [
 		font-size: 90%;
 	}
 
+	.carousel-toggle,
 	.carousel-prev,
 	.carousel-next {
 		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
 		width: 2.5rem;
 		height: 2.5rem;
 		border: 0;
@@ -122,9 +119,16 @@ const photos = [
 		cursor: pointer;
 	}
 
+	.carousel-toggle:hover,
 	.carousel-prev:hover,
 	.carousel-next:hover {
 		background: #2a7fff;
+	}
+
+	.carousel-prev,
+	.carousel-next {
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 	.carousel-prev {
@@ -133,6 +137,12 @@ const photos = [
 
 	.carousel-next {
 		right: 0.5rem;
+	}
+
+	.carousel-toggle {
+		top: 0.5rem;
+		right: 0.5rem;
+		font-size: 0.9rem;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -146,52 +156,84 @@ const photos = [
 	// Progressive enhancement: the carousel already scrolls and snaps without
 	// this, so the buttons stay hidden until the script runs.
 	const AUTOPLAY_MS = 5000;
+	const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 	document.querySelectorAll<HTMLElement>('.photo-carousel').forEach((carousel) => {
 		const track = carousel.querySelector<HTMLElement>('.carousel-track');
+		const toggle = carousel.querySelector<HTMLButtonElement>('.carousel-toggle');
 		const prev = carousel.querySelector<HTMLButtonElement>('.carousel-prev');
 		const next = carousel.querySelector<HTMLButtonElement>('.carousel-next');
-		if (!track || !prev || !next) return;
+		if (!track || !toggle || !prev || !next) return;
 
+		const count = track.children.length;
 		prev.hidden = false;
 		next.hidden = false;
 
 		const step = (direction: number) => {
-			const slide = track.clientWidth;
-			// Wrap around rather than stopping at either end.
-			const max = track.scrollWidth - slide;
-			let target = track.scrollLeft + direction * slide;
-			if (target > max + 1) target = 0;
-			else if (target < -1) target = max;
-			track.scrollTo({ left: target });
+			// Count from the nearest slide, not scrollLeft itself, so a click
+			// during a smooth scroll still lands on a slide. Wraps at both ends.
+			const width = track.clientWidth;
+			const current = Math.round(track.scrollLeft / width);
+			const target = (current + direction + count) % count;
+			track.scrollTo({ left: target * width });
+		};
+
+		// `paused` is the visitor's choice, shown on the toggle; the others only
+		// hold autoplay back while they last.
+		let paused = false;
+		let hovered = false;
+		let visible = false;
+		let timer: number | undefined;
+
+		const update = () => {
+			toggle.hidden = reduced.matches;
+			toggle.innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
+			toggle.setAttribute('aria-label', paused ? 'Avvia le foto' : 'Metti in pausa le foto');
+
+			const running = !paused && !hovered && visible && !document.hidden && !reduced.matches;
+			// Announce slide changes only when the visitor caused them.
+			track.setAttribute('aria-live', running ? 'off' : 'polite');
+			if (running && timer === undefined) {
+				timer = window.setInterval(() => step(1), AUTOPLAY_MS);
+			} else if (!running && timer !== undefined) {
+				window.clearInterval(timer);
+				timer = undefined;
+			}
 		};
 
 		prev.addEventListener('click', () => step(-1));
 		next.addEventListener('click', () => step(1));
+		toggle.addEventListener('click', () => {
+			paused = !paused;
+			update();
+		});
 
-		const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-		let timer: number | undefined;
+		// Keyboard focus stops autoplay until the visitor restarts it with the
+		// toggle, which is why focusing the toggle itself doesn't count.
+		carousel.addEventListener('focusin', (event) => {
+			if (event.target === toggle) return;
+			paused = true;
+			update();
+		});
 
-		const stop = () => {
-			if (timer !== undefined) window.clearInterval(timer);
-			timer = undefined;
-		};
+		// Pointer events cover touch too: a finger "leaves" when it lifts.
+		carousel.addEventListener('pointerenter', () => {
+			hovered = true;
+			update();
+		});
+		carousel.addEventListener('pointerleave', () => {
+			hovered = false;
+			update();
+		});
 
-		const start = () => {
-			stop();
-			if (reduced.matches) return;
-			timer = window.setInterval(() => step(1), AUTOPLAY_MS);
-		};
+		// No point turning slides (and fetching their lazy images) nobody sees.
+		new IntersectionObserver(([entry]) => {
+			visible = entry.isIntersecting;
+			update();
+		}).observe(carousel);
+		document.addEventListener('visibilitychange', update);
+		reduced.addEventListener('change', update);
 
-		// Don't advance under someone's finger, cursor or keyboard focus.
-		for (const event of ['pointerenter', 'focusin', 'touchstart'] as const) {
-			carousel.addEventListener(event, stop);
-		}
-		for (const event of ['pointerleave', 'focusout'] as const) {
-			carousel.addEventListener(event, start);
-		}
-		reduced.addEventListener('change', start);
-
-		start();
+		update();
 	});
 </script>
